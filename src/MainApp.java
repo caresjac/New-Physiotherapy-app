@@ -17,7 +17,7 @@ public class MainApp {
             System.out.println("3. Book an Appointment");
             System.out.println("4. Change/Cancel Booking");
             System.out.println("5. Attend Appointment");
-            System.out.println("6. Print Report");
+            System.out.println("6. Print Report (May 2025)");
             System.out.println("7. Exit");
             System.out.print("Choose an option: ");
 
@@ -30,7 +30,7 @@ public class MainApp {
                 case 3: bookAppointment(scanner); break;
                 case 4: cancelBooking(scanner); break;
                 case 5: attendAppointment(scanner); break;
-                case 6: printReport(); break;
+                case 6: printMay2025Report(); break;
                 case 7: System.out.println("Exiting..."); return;
                 default: System.out.println("Invalid choice, try again.");
             }
@@ -98,7 +98,7 @@ public class MainApp {
 
         System.out.print("Enter Treatment Name: ");
         String treatment = scanner.nextLine();
-        System.out.print("Enter Date & Time: ");
+        System.out.print("Enter Date & Time (e.g., 2025-05-15 14:00): ");
         String dateTime = scanner.nextLine();
 
         bookings.add(new Booking(bookingCounter++, patient, physio, dateTime, treatment));
@@ -122,11 +122,11 @@ public class MainApp {
 
         if (choice == 1) {
             booking.cancelBooking();
-            System.out.println("Booking cancelled  successfully!");
+            System.out.println("Booking cancelled successfully!");
         } else if (choice == 2) {
             System.out.print("Enter new Date & Time: ");
             String newDateTime = scanner.nextLine();
-            booking.dateTime = newDateTime;
+            booking.setDateTime(newDateTime);
             System.out.println("Booking updated successfully!");
         }
     }
@@ -146,10 +146,12 @@ public class MainApp {
         System.out.println("Appointment marked as attended.");
     }
 
-    private static void printReport() {
-        System.out.println("\n=== Clinic Report ===");
+    private static void printMay2025Report() {
+        System.out.println("\n=== Clinic Report (May 2025) ===");
         for (Booking booking : bookings) {
-            System.out.println("Booking ID: " + booking.getBookingId() + ", Patient: " + booking.getPatient().getName() + ", Physiotherapist: " + booking.getPhysiotherapist().getName() + ", Status: " + booking.getStatus());
+            if (booking.getDateTime().startsWith("2025-05")) {
+                System.out.println("Booking ID: " + booking.getBookingId() + ", Patient: " + booking.getPatient().getName() + ", Physiotherapist: " + booking.getPhysiotherapist().getName() + ", DateTime: " + booking.getDateTime() + ", Status: " + booking.getStatus());
+            }
         }
     }
 }
