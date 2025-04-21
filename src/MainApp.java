@@ -38,15 +38,28 @@ public class MainApp {
     }
 
     private static void loadInitialData() {
-        Physiotherapist p1 = new Physiotherapist(101, "Dr. Jackson", "123 Main St", "555-5678");
-        Physiotherapist p2 = new Physiotherapist(102, "Dr. Ajibola", "456 Elm St", "555-6789");
-        physiotherapists.add(p1);
-        physiotherapists.add(p2);
+        physiotherapists.add(new Physiotherapist(1788, "Dr. Jackson", "123 Main St", "555-5678"));
+        physiotherapists.add(new Physiotherapist(1092, "Dr. Ajibola", "456 Elm St", "555-6789"));
+        physiotherapists.add(new Physiotherapist(6103, "Dr. Andrew Wet", "789 Oak Avenue", "555-1122"));
+        physiotherapists.add(new Physiotherapist(1404, "Dr. Raph", "321 Pine Lane", "555-3344"));
+        physiotherapists.add(new Physiotherapist(1055, "Dr. Demolic Muller", "89 Maple Blvd", "555-5566"));
+        physiotherapists.add(new Physiotherapist(1736, "Dr. Mally", "90 Cedar Hill", "555-6677"));
+        physiotherapists.add(new Physiotherapist(9244, "Dr. Waffi Boy", "12 King’s Street", "555-7788"));
+        physiotherapists.add(new Physiotherapist(5424, "Dr. Jubreal", "45 Queen’s Road", "555-8899"));
+        physiotherapists.add(new Physiotherapist(1982, "Dr. Sarah Nwachukwu", "67 Victoria Ave", "555-9900"));
+        physiotherapists.add(new Physiotherapist(1108, "Dr. Daniel Obi", "22 Sunset Blvd", "555-1011"));
 
-        Patient pat1 = new Patient(1, "Uthman", "78 tiger moth way", "000-1234");
-        Patient pat2 = new Patient(2, "Ahmed ", "59 hatfield", "111-2345");
-        patients.add(pat1);
-        patients.add(pat2);
+        // Patients
+        patients.add(new Patient(1, "Uthman", "78 Tiger Moth Way", "000-1234"));
+        patients.add(new Patient(2, "Ahmed", "59 Hatfield", "111-2345"));
+        patients.add(new Patient(3, "Zainab Ali", "34 Willow Road", "222-3456"));
+        patients.add(new Patient(4, "Emmanuel Ade", "21 Cedar Street", "333-4567"));
+        patients.add(new Patient(5, "Maryam Bello", "16 Birch Close", "444-5678"));
+        patients.add(new Patient(6, "Chinedu Okafor", "10 Jasmine Crescent", "555-6789"));
+        patients.add(new Patient(7, "Ngozi Eze", "77 Ocean View", "666-7890"));
+        patients.add(new Patient(8, "Tunde Bamidele", "28 Liberty Road", "777-8901"));
+        patients.add(new Patient(9, "Aisha Sani", "9 Unity Lane", "888-9012"));
+        patients.add(new Patient(10, "Kelvin White", "5 Harmony Gardens", "999-0123"));
     }
 
     private static void addPatient(Scanner scanner) {

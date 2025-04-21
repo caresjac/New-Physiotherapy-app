@@ -38,4 +38,9 @@ public class Booking {
         System.out.println("Treatment: " + treatment);
         System.out.println("Status: " + status);
     }
+
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
+    }
+
 }
