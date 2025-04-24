@@ -46,8 +46,8 @@ public class MainApp {
         physiotherapists.add(new Physiotherapist(1736, "Dr. Mally", "90 Cedar Hill", "555-6677"));
         physiotherapists.add(new Physiotherapist(9244, "Dr. Waffi Boy", "12 King’s Street", "555-7788"));
         physiotherapists.add(new Physiotherapist(5424, "Dr. Jubreal", "45 Queen’s Road", "555-8899"));
-        physiotherapists.add(new Physiotherapist(1982, "Dr. Sarah Nwachukwu", "67 Victoria Ave", "555-9900"));
-        physiotherapists.add(new Physiotherapist(1108, "Dr. Daniel Obi", "22 Sunset Blvd", "555-1011"));
+        physiotherapists.add(new Physiotherapist(1982, "Dr. Khadija", "67 Victoria Ave", "555-9900"));
+        physiotherapists.add(new Physiotherapist(1108, "Dr. Arike ola ", "22 Sunset Blvd", "555-1011"));
 
         // Patients
         patients.add(new Patient(1, "Uthman", "78 Tiger Moth Way", "000-1234"));
