@@ -1,10 +1,11 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class MainApp {
-    private static List<Patient> patients = new ArrayList<>();
-    private static List<Physiotherapist> physiotherapists = new ArrayList<>();
-    private static List<Booking> bookings = new ArrayList<>();
-    private static int bookingCounter = 1001;
+     static List<Patient> patients = new ArrayList<>();
+     static List<Physiotherapist> physiotherapists = new ArrayList<>();
+     static List<Booking> bookings = new ArrayList<>();
+     static int bookingCounter = 1001;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -62,6 +63,9 @@ public class MainApp {
         patients.add(new Patient(10, "Kelvin White", "5 Harmony Gardens", "999-0123"));
     }
 
+    public static void addPatient(int id, String name, String address, String phone) {
+        patients.add(new Patient(id, name, address, phone));
+    }
     private static void addPatient(Scanner scanner) {
         System.out.print("Enter Patient ID: ");
         int id = scanner.nextInt();
@@ -76,6 +80,11 @@ public class MainApp {
         patients.add(new Patient(id, name, address, phone));
         System.out.println("Patient added successfully!");
     }
+
+    public static boolean removePatientById(int id) {
+        return patients.removeIf(p -> p.getId() == id);
+    }
+
 
     private static void removePatient(Scanner scanner) {
         System.out.print("Enter Patient ID to Remove: ");
@@ -118,6 +127,10 @@ public class MainApp {
         System.out.println("Appointment booked successfully!");
     }
 
+    public static void testBookAppointment(Scanner scanner) {
+        bookAppointment(scanner);
+    }
+
     private static void cancelBooking(Scanner scanner) {
         System.out.print("Enter Booking ID to Cancel or Change: ");
         int bookingId = scanner.nextInt();
@@ -144,6 +157,10 @@ public class MainApp {
         }
     }
 
+    public static void testCancelBooking(Scanner scanner) {
+        cancelBooking(scanner);
+    }
+
     private static void attendAppointment(Scanner scanner) {
         System.out.print("Enter Booking ID to Mark as Attended: ");
         int bookingId = scanner.nextInt();
@@ -166,5 +183,11 @@ public class MainApp {
                 System.out.println("Booking ID: " + booking.getBookingId() + ", Patient: " + booking.getPatient().getName() + ", Physiotherapist: " + booking.getPhysiotherapist().getName() + ", DateTime: " + booking.getDateTime() + ", Status: " + booking.getStatus());
             }
         }
+    }
+
+    public static List<Booking> getMay2025BookingsForTest() {
+        return bookings.stream()
+                .filter(b -> b.getDateTime().startsWith("2025-05"))
+                .collect(Collectors.toList());
     }
 }
